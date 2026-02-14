@@ -1,0 +1,318 @@
+# HearAlert Real-Time Audio Classification Dataset
+# Version 3.0 - Expanded Real-Time Categories
+# Generated: 2026-02-07
+
+metadata:
+  name: hearalert_realtime_classifier
+  version: "3.0"
+  description: "Expanded audio classification dataset for deaf accessibility with real-time focus"
+  total_audio_files: 3720
+  total_categories: 26
+  training_accuracy: 89.82%
+  validation_accuracy: 91.43%
+  model_file: hearalert_classifier.tflite
+  model_size: 2.5MB
+  labels_file: hearalert_labels.txt
+  audio_format: WAV
+  sample_rate: 16000
+  duration: 5s
+
+# Real-Time Classification Categories
+categories:
+  # ═══════════════════════════════════════════════════════════════
+  # CRITICAL PRIORITY (10) - Emergency Alerts
+  # ═══════════════════════════════════════════════════════════════
+  - id: baby_cry
+    display_name: "Baby Crying"
+    priority: 10
+    alert_type: critical
+    color: "#FF6B9D"
+    vibration_pattern: [0, 500, 200, 500, 200, 500]
+    file_count: 80
+    description: "Infant crying sounds requiring immediate attention"
+    
+  - id: car_horn
+    display_name: "Car Horn"
+    priority: 10
+    alert_type: critical
+    color: "#FFD700"
+    vibration_pattern: [0, 300, 100, 300, 100, 300, 100, 300]
+    file_count: 40
+    description: "Vehicle horn for traffic safety"
+    
+  - id: siren
+    display_name: "Emergency Siren"
+    priority: 10
+    alert_type: critical
+    color: "#FF4444"
+    vibration_pattern: [0, 200, 100, 200, 100, 200, 100, 200, 100, 200]
+    file_count: 40
+    description: "Ambulance, police, fire truck sirens"
+    
+  - id: fire_alarm
+    display_name: "Fire Alarm"
+    priority: 10
+    alert_type: critical
+    color: "#FF0000"
+    vibration_pattern: [0, 1000, 500, 1000, 500, 1000]
+    file_count: 80
+    description: "Building fire alarm sounds"
+    
+  - id: gunshot_firework
+    display_name: "Gunshot/Fireworks"
+    priority: 10
+    alert_type: critical
+    color: "#DC143C"
+    vibration_pattern: [0, 100, 50, 100, 50, 100, 50, 100]
+    file_count: 40
+    description: "Sudden explosive sounds for safety awareness"
+
+  # ═══════════════════════════════════════════════════════════════
+  # HIGH PRIORITY (8-9) - Safety & Important Alerts
+  # ═══════════════════════════════════════════════════════════════
+  - id: train
+    display_name: "Train"
+    priority: 9
+    alert_type: high
+    color: "#8B4513"
+    vibration_pattern: [0, 600, 300, 600, 300, 600]
+    file_count: 40
+    description: "Train horn and railway crossing sounds"
+    
+  - id: glass_breaking
+    display_name: "Glass Breaking"
+    priority: 9
+    alert_type: high
+    color: "#00CED1"
+    vibration_pattern: [0, 100, 50, 100, 50, 100, 50, 100]
+    file_count: 40
+    description: "Window or glass breaking sounds"
+    
+  - id: traffic
+    display_name: "Traffic/Vehicle"
+    priority: 8
+    alert_type: high
+    color: "#808080"
+    vibration_pattern: [0, 400, 200, 400]
+    file_count: 80
+    description: "General traffic and vehicle sounds"
+    
+  - id: door_knock
+    display_name: "Door Knock"
+    priority: 8
+    alert_type: high
+    color: "#8B4513"
+    vibration_pattern: [0, 200, 150, 200, 150, 200]
+    file_count: 80
+    description: "Someone knocking at the door"
+    
+  - id: doorbell
+    display_name: "Doorbell"
+    priority: 8
+    alert_type: high
+    color: "#32CD32"
+    vibration_pattern: [0, 400, 200, 400]
+    file_count: 40
+    description: "Doorbell ringing sounds"
+
+  - id: speech
+    display_name: "Human Voice/Speech"
+    priority: 8
+    alert_type: high
+    color: "#6B5B95"
+    vibration_pattern: [0, 300, 200, 300]
+    file_count: 120
+    description: "Human speech and voice detection"
+
+  - id: door_creaking
+    display_name: "Door Opening"
+    priority: 8
+    alert_type: high
+    color: "#A0522D"
+    vibration_pattern: [0, 250, 150, 250]
+    file_count: 40
+    description: "Door opening or creaking sounds"
+
+  - id: chainsaw
+    display_name: "Power Tools"
+    priority: 8
+    alert_type: high
+    color: "#FF4500"
+    vibration_pattern: [0, 400, 200, 400, 200, 400]
+    file_count: 80
+    description: "Chainsaw and power tool sounds"
+
+  # ═══════════════════════════════════════════════════════════════
+  # MEDIUM PRIORITY (6-7) - Informational Alerts
+  # ═══════════════════════════════════════════════════════════════
+  - id: phone_ring
+    display_name: "Phone Ring"
+    priority: 7
+    alert_type: medium
+    color: "#1E90FF"
+    vibration_pattern: [0, 500, 300, 500]
+    file_count: 40
+    description: "Phone ringing sounds"
+    
+  - id: dog_bark
+    display_name: "Dog Barking"
+    priority: 7
+    alert_type: medium
+    color: "#A0522D"
+    vibration_pattern: [0, 300, 200, 300]
+    file_count: 40
+    description: "Dog barking sounds"
+    
+  - id: thunderstorm
+    display_name: "Thunderstorm"
+    priority: 7
+    alert_type: medium
+    color: "#4169E1"
+    vibration_pattern: [0, 800, 500, 800]
+    file_count: 40
+    description: "Thunder and storm sounds"
+
+  - id: coughing
+    display_name: "Coughing"
+    priority: 7
+    alert_type: medium
+    color: "#FF7F50"
+    vibration_pattern: [0, 200, 100, 200]
+    file_count: 40
+    description: "Coughing sounds for health monitoring"
+
+  - id: breathing
+    display_name: "Heavy Breathing"
+    priority: 7
+    alert_type: medium
+    color: "#87CEEB"
+    vibration_pattern: [0, 300, 200, 300]
+    file_count: 80
+    description: "Heavy breathing or snoring sounds"
+    
+  - id: helicopter
+    display_name: "Helicopter"
+    priority: 6
+    alert_type: medium
+    color: "#708090"
+    vibration_pattern: [0, 500, 300, 500]
+    file_count: 40
+    description: "Helicopter sounds"
+
+  - id: footsteps
+    display_name: "Footsteps"
+    priority: 6
+    alert_type: medium
+    color: "#8B4513"
+    vibration_pattern: [0, 200, 150, 200, 150, 200]
+    file_count: 40
+    description: "Footsteps approaching"
+
+  - id: washing_machine
+    display_name: "Washing Machine"
+    priority: 6
+    alert_type: medium
+    color: "#4682B4"
+    vibration_pattern: [0, 400, 300, 400]
+    file_count: 40
+    description: "Washing machine cycle sounds"
+
+  # ═══════════════════════════════════════════════════════════════
+  # LOW PRIORITY (4-5) - Ambient Alerts
+  # ═══════════════════════════════════════════════════════════════
+  - id: cat_meow
+    display_name: "Cat Meowing"
+    priority: 5
+    alert_type: low
+    color: "#DDA0DD"
+    vibration_pattern: [0, 200, 200, 200]
+    file_count: 40
+    description: "Cat meowing sounds"
+
+  - id: vacuum_cleaner
+    display_name: "Vacuum Cleaner"
+    priority: 5
+    alert_type: low
+    color: "#708090"
+    vibration_pattern: [0, 300, 200, 300]
+    file_count: 40
+    description: "Vacuum cleaner running sounds"
+
+  - id: airplane
+    display_name: "Airplane"
+    priority: 5
+    alert_type: low
+    color: "#4169E1"
+    vibration_pattern: [0, 400, 300, 400]
+    file_count: 40
+    description: "Airplane flying overhead"
+
+  - id: keyboard_typing
+    display_name: "Keyboard/Mouse"
+    priority: 4
+    alert_type: low
+    color: "#2F4F4F"
+    vibration_pattern: [0, 100, 100, 100]
+    file_count: 80
+    description: "Keyboard and mouse sounds"
+
+  - id: clock_tick
+    display_name: "Clock Ticking"
+    priority: 4
+    alert_type: low
+    color: "#DAA520"
+    vibration_pattern: [0, 100, 200, 100]
+    file_count: 40
+    description: "Clock ticking sounds"
+
+# Real-Time Detection Settings
+realtime_config:
+  min_confidence: 0.65
+  detection_interval_ms: 500
+  overlap_ratio: 0.5
+  max_alerts_per_minute: 10
+  priority_threshold: 5
+  
+# Alert Settings by Priority
+alert_settings:
+  critical:
+    show_notification: true
+    vibrate: true
+    flash_screen: true
+    sound_alert: false
+    repeat_interval_sec: 5
+    
+  high:
+    show_notification: true
+    vibrate: true
+    flash_screen: true
+    sound_alert: false
+    repeat_interval_sec: 10
+    
+  medium:
+    show_notification: true
+    vibrate: true
+    flash_screen: false
+    sound_alert: false
+    repeat_interval_sec: 30
+    
+  low:
+    show_notification: true
+    vibrate: false
+    flash_screen: false
+    sound_alert: false
+    repeat_interval_sec: 60
+
+# Model Training Summary
+training_summary:
+  epochs: 50
+  batch_size: 32
+  learning_rate: 0.001
+  base_model: yamnet
+  transfer_learning: true
+  fine_tune_layers: 5
+  train_samples: 1120
+  validation_samples: 140
+  test_samples: 140
+  final_accuracy: 0.8982
+  validation_accuracy: 0.9143

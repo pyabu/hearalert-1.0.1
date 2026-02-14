@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HearAlert - Zeroth Review Document</title>
+    <style>
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #fff;
+        }
+        
+        h1 {
+            color: #1a1a2e;
+            text-align: center;
+            font-size: 28px;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #0066cc;
+            font-size: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            color: #333;
+            font-size: 16px;
+            margin-top: 25px;
+        }
+        
+        h4 {
+            color: #555;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        
+        th {
+            background-color: #0066cc;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        strong {
+            color: #0066cc;
+        }
+        
+        .title-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 30px;
+            margin: -40px -40px 40px -40px;
+            text-align: center;
+        }
+        
+        .title-section h1 {
+            color: white;
+            border-bottom: none;
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        .title-section p {
+            color: #ccc;
+            text-align: center;
+            margin: 10px 0 0 0;
+        }
+        
+        .abstract-box {
+            background: #f8f9fa;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="title-section">
+    <h1>Zeroth Review Document</h1>
+    <p>HearAlert Project</p>
+</div>
+
+<h2>Title</h2>
+<p style="text-align: center; font-size: 18px; font-weight: bold; color: #1a1a2e;">
+    "HearAlert: AI-Powered Real-Time Sound Recognition and Multi-Modal Alert System for Deaf and Hard-of-Hearing Individuals"
+</p>
+
+<h2>Abstract</h2>
+<div class="abstract-box">
+<p>
+Hearing impairment significantly impacts an individual's ability to perceive environmental sounds critical for safety, communication, and daily living. Traditional assistive devices like hearing aids provide limited functionality and fail to address the diverse acoustic environments deaf individuals encounter. This project presents <strong>HearAlert</strong>, an innovative mobile application leveraging <strong>"Artificial intelligence and machine learning"</strong> to provide real-time environmental sound recognition and intelligent alerting specifically designed for deaf and hard-of-hearing users.
+</p>
+
+<p>
+The system employs <strong>TensorFlow Lite's YAMNet model</strong> —a deep neural network trained on the AudioSet dataset—capable of classifying over <strong>more than 500 distinct sound categories</strong> including emergency sounds (fire alarms, sirens), human interactions (doorbell, door knocking), infant cries, animal sounds, and potential dangers (glass breaking, vehicle horns). The application processes audio input at <strong>16kHz sampling rate</strong> with inference latency under <strong>(50 milliseconds)</strong>, enabling near-instantaneous detection and response.
+</p>
+
+<p>
+HearAlert implements a sophisticated <strong>multi-modal alert mechanism</strong> that delivers notifications through:
+</p>
+
+<ul>
+    <li><strong>Haptic Feedback:</strong> Category-specific vibration patterns (e.g., SOS pattern for fire alarms, gentle pulses for baby cries)</li>
+    <li><strong>Visual Alerts:</strong> Flashlight strobe patterns synchronized with sound urgency.</li>
+    <li><strong>Text-to-Speech:</strong> Voice announcements for partially hearing users.</li>
+</ul>
+
+<p>
+A <strong>priority-based detection engine</strong> with 38+ prioritized sound categories ensures critical sounds receive immediate attention with enhanced detection thresholds. The specialized <strong>Baby Cry Classifier</strong> module provides additional categorization of infant distress signals (hunger, discomfort, tiredness), offering actionable insights for caregivers.
+</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>Plan of Work</h2>
+
+<h3>Gantt Chart Overview</h3>
+<table>
+    <tr>
+        <th>Phase</th>
+        <th>Description</th>
+        <th>Duration</th>
+        <th>Timeline</th>
+    </tr>
+    <tr>
+        <td>Phase 1</td>
+        <td>Research & Planning</td>
+        <td>6 weeks</td>
+        <td>Sep - Oct 2025</td>
+    </tr>
+    <tr>
+        <td>Phase 2</td>
+        <td>Core Development</td>
+        <td>9 weeks</td>
+        <td>Oct - Dec 2025</td>
+    </tr>
+    <tr>
+        <td>Phase 3</td>
+        <td>Alert System</td>
+        <td>5 weeks</td>
+        <td>Nov - Jan 2026</td>
+    </tr>
+    <tr>
+        <td>Phase 4</td>
+        <td>UI/UX Development</td>
+        <td>5 weeks</td>
+        <td>Dec - Jan 2026</td>
+    </tr>
+    <tr>
+        <td>Phase 5</td>
+        <td>Advanced Features</td>
+        <td>5 weeks</td>
+        <td>Dec - Feb 2026</td>
+    </tr>
+    <tr>
+        <td>Phase 6</td>
+        <td>Testing & Deployment</td>
+        <td>7 weeks</td>
+        <td>Jan - Mar 2026</td>
+    </tr>
+</table>
+
+<h3>Work Breakdown Structure</h3>
+
+<h4>Phase 1: Research & Planning</h4>
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Description</th>
+        <th>Deliverable</th>
+    </tr>
+    <tr>
+        <td>Literature Survey</td>
+        <td>Study existing accessibility apps, research audio ML models</td>
+        <td>Comparison report</td>
+    </tr>
+    <tr>
+        <td>Requirement Analysis</td>
+        <td>Functional and non-functional requirements gathering</td>
+        <td>SRS document</td>
+    </tr>
+    <tr>
+        <td>Tech Stack Selection</td>
+        <td>Framework comparison, ML runtime selection</td>
+        <td>Technology decision</td>
+    </tr>
+    <tr>
+        <td>System Design</td>
+        <td>Architecture design, database design, UI wireframes</td>
+        <td>Design document</td>
+    </tr>
+</table>
+
+<h4>Phase 2: Core Development</h4>
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Description</th>
+        <th>Deliverable</th>
+    </tr>
+    <tr>
+        <td>Project Setup</td>
+        <td>Flutter project initialization, platform configuration</td>
+        <td>Base project</td>
+    </tr>
+    <tr>
+        <td>Audio Capture</td>
+        <td>Microphone stream implementation at 16kHz</td>
+        <td>Audio pipeline</td>
+    </tr>
+    <tr>
+        <td>ML Integration</td>
+        <td>TensorFlow Lite and YAMNet model integration</td>
+        <td>Classification engine</td>
+    </tr>
+    <tr>
+        <td>Classification Engine</td>
+        <td>Real-time inference pipeline implementation</td>
+        <td>Sound classifier</td>
+    </tr>
+    <tr>
+        <td>Priority Database</td>
+        <td>38+ prioritized sounds with confidence boosting</td>
+        <td>Priority database</td>
+    </tr>
+</table>
+
+<h4>Phase 3: Alert System</h4>
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Description</th>
+        <th>Deliverable</th>
+    </tr>
+    <tr>
+        <td>Vibration Patterns</td>
+        <td>Category-specific patterns with exact millisecond specifications</td>
+        <td>Vibration service</td>
+    </tr>
+    <tr>
+        <td>Flashlight Alerts</td>
+        <td>Torch API integration, strobe pattern implementation</td>
+        <td>Flash service</td>
+    </tr>
+    <tr>
+        <td>TTS Integration</td>
+        <td>Text-to-speech setup, announcement templates</td>
+        <td>TTS service</td>
+    </tr>
+    <tr>
+        <td>Multi-Modal Sync</td>
+        <td>Synchronized alert delivery across all modalities</td>
+        <td>Alert service</td>
+    </tr>
+</table>
+
+<h4>Vibration Pattern Specifications</h4>
+<table>
+    <tr>
+        <th>Sound Type</th>
+        <th>Pattern (milliseconds)</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Fire Alarm</td>
+        <td>[100,100]×3 + [300,100]×3 + [100,100]×3</td>
+        <td>SOS strobe pattern</td>
+    </tr>
+    <tr>
+        <td>Vehicle Horn</td>
+        <td>[500,200,500,200,500]</td>
+        <td>Long warning pulses</td>
+    </tr>
+    <tr>
+        <td>Door Knock</td>
+        <td>[100,50,100,300,100,50,100]</td>
+        <td>Double tap pattern</td>
+    </tr>
+    <tr>
+        <td>Baby Cry</td>
+        <td>[200,100,200,100,200]</td>
+        <td>Gentle pulse</td>
+    </tr>
+    <tr>
+        <td>Glass Breaking</td>
+        <td>[50,30]×10</td>
+        <td>Sharp urgent jitter</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<h4>Phase 4: UI/UX Development</h4>
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Description</th>
+        <th>Deliverable</th>
+    </tr>
+    <tr>
+        <td>Liquid Glass Theme</td>
+        <td>Color palette, typography, glassmorphism effects</td>
+        <td>Theme system</td>
+    </tr>
+    <tr>
+        <td>Screen Implementations</td>
+        <td>Home, Live Detection, Settings, History screens</td>
+        <td>All screens</td>
+    </tr>
+    <tr>
+        <td>Accessibility Features</td>
+        <td>High contrast, large text, deaf card, signal guide</td>
+        <td>Accessibility widgets</td>
+    </tr>
+</table>
+
+<h4>Phase 5: Advanced Features</h4>
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Description</th>
+        <th>Deliverable</th>
+    </tr>
+    <tr>
+        <td>Baby Cry Classifier</td>
+        <td>Custom ML model for infant cry categorization</td>
+        <td>Baby cry service</td>
+    </tr>
+    <tr>
+        <td>Scenario Profiles</td>
+        <td>Home, Street, School detection modes</td>
+        <td>Profile manager</td>
+    </tr>
+    <tr>
+        <td>Emergency SOS</td>
+        <td>One-tap emergency trigger with contact alerts</td>
+        <td>SOS system</td>
+    </tr>
+</table>
+
+<h4>Phase 6: Testing & Deployment</h4>
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Description</th>
+        <th>Deliverable</th>
+    </tr>
+    <tr>
+        <td>Unit Testing</td>
+        <td>Service, provider, and model unit tests</td>
+        <td>Test suite</td>
+    </tr>
+    <tr>
+        <td>Integration Testing</td>
+        <td>End-to-end flow, platform testing</td>
+        <td>Test reports</td>
+    </tr>
+    <tr>
+        <td>UAT Testing</td>
+        <td>Deaf user testing, accessibility audit</td>
+        <td>UAT report</td>
+    </tr>
+    <tr>
+        <td>Bug Fixes</td>
+        <td>Critical fixes, performance optimization</td>
+        <td>Stable build</td>
+    </tr>
+    <tr>
+        <td>Final Release</td>
+        <td>Play Store and App Store submission</td>
+        <td>Production app</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>Development Environment & Component Specification</h2>
+
+<table>
+    <tr>
+        <th>Component</th>
+        <th>Specification</th>
+    </tr>
+    <tr>
+        <td>Operating System</td>
+        <td>Ubuntu 22.04 LTS / Windows 11 / macOS 14+</td>
+    </tr>
+    <tr>
+        <td>IDE</td>
+        <td>Android Studio 2024.1+ / VS Code 1.85+</td>
+    </tr>
+    <tr>
+        <td>Flutter SDK</td>
+        <td>3.24.0+</td>
+    </tr>
+    <tr>
+        <td>Dart SDK</td>
+        <td>3.5.3+</td>
+    </tr>
+    <tr>
+        <td>Android SDK</td>
+        <td>API Level 21-34 (Android 5.0 - 14)</td>
+    </tr>
+    <tr>
+        <td>Xcode</td>
+        <td>15.0+ (macOS only for iOS)</td>
+    </tr>
+</table>
+
+<h2>Hardware Requirements</h2>
+
+<h3>Development Machine</h3>
+<table>
+    <tr>
+        <th>Component</th>
+        <th>Minimum Requirement</th>
+        <th>Recommended Requirement</th>
+    </tr>
+    <tr>
+        <td>Processor</td>
+        <td>Intel i5 / AMD Ryzen 5</td>
+        <td>Intel i7 / AMD Ryzen 7 / Apple M1 or above</td>
+    </tr>
+    <tr>
+        <td>RAM</td>
+        <td>8 GB</td>
+        <td>16 GB or above</td>
+    </tr>
+    <tr>
+        <td>Storage</td>
+        <td>50 GB free space</td>
+        <td>100 GB SSD</td>
+    </tr>
+</table>
+
+<h2>Target Mobile Devices</h2>
+
+<h3>Android Requirements</h3>
+<table>
+    <tr>
+        <th>Specification</th>
+        <th>Minimum Requirement</th>
+        <th>Recommended Requirement</th>
+    </tr>
+    <tr>
+        <td>Android Version</td>
+        <td>Android 5.0 (API Level 21)</td>
+        <td>Android 10 or above (API Level 29+)</td>
+    </tr>
+    <tr>
+        <td>Processor</td>
+        <td>ARM v7 / ARM64</td>
+        <td>ARM64 with Neural Processing Unit</td>
+    </tr>
+    <tr>
+        <td>RAM</td>
+        <td>2 GB</td>
+        <td>4 GB or above</td>
+    </tr>
+    <tr>
+        <td>Storage</td>
+        <td>100 MB free space</td>
+        <td>200 MB free space</td>
+    </tr>
+</table>
+
+<h3>iOS Requirements</h3>
+<table>
+    <tr>
+        <th>Specification</th>
+        <th>Minimum Requirement</th>
+        <th>Recommended Requirement</th>
+    </tr>
+    <tr>
+        <td>iOS Version</td>
+        <td>iOS 12.0</td>
+        <td>iOS 15.0 or above</td>
+    </tr>
+    <tr>
+        <td>Device Model</td>
+        <td>iPhone 6s or newer</td>
+        <td>iPhone 12 or newer</td>
+    </tr>
+</table>
+
+<h2>Essential Hardware Features</h2>
+<table>
+    <tr>
+        <th>Hardware Feature</th>
+        <th>Requirement Status</th>
+        <th>Usage</th>
+    </tr>
+    <tr>
+        <td>Microphone</td>
+        <td>✅ Required</td>
+        <td>Audio input for sound detection</td>
+    </tr>
+    <tr>
+        <td>Vibration Motor</td>
+        <td>✅ Required</td>
+        <td>Haptic alert delivery</td>
+    </tr>
+    <tr>
+        <td>Camera Flash / Torch</td>
+        <td>⚠️ Recommended</td>
+        <td>Visual strobe alerts</td>
+    </tr>
+    <tr>
+        <td>Speaker</td>
+        <td>⚡ Optional</td>
+        <td>Text-to-speech announcements</td>
+    </tr>
+    <tr>
+        <td>Internet Connectivity</td>
+        <td>❌ Not Required</td>
+        <td>Fully offline operation</td>
+    </tr>
+</table>
+
+<div class="footer">
+    <p><strong>Document Version:</strong> 1.0 | <strong>Date:</strong> January 22, 2026</p>
+    <p><strong>Project:</strong> HearAlert - AI-Powered Sound Recognition System</p>
+</div>
+
+</body>
+</html>

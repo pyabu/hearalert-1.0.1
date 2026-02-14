@@ -1,0 +1,6 @@
+hungry
+tired
+belly_pain
+discomfort
+burping
+silence

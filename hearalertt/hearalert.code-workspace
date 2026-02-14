@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "Root (Python/Data)"
+		},
+		{
+			"path": "mobile_app",
+			"name": "Mobile App (Flutter)"
+		}
+	],
+	"settings": {
+		"dart.flutterSdkPath": "/Users/abu/development/flutter",
+		"flutter.sdkPath": "/Users/abu/development/flutter"
+	}
+}

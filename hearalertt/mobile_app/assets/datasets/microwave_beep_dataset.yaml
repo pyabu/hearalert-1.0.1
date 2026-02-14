@@ -1,0 +1,27 @@
+metadata:
+  name: microwave_beep_audio_dataset
+  display_name: Microwave Beep
+  version: '2.0'
+  format: WAV
+  sample_rate: 16000
+  duration: 5s
+classification:
+  category_id: microwave_beep
+  priority: 7
+  alert_type: medium
+  color: '#20B2AA'
+dataset:
+  total_files: 200
+  sources:
+  - ESC-50
+  - augmented
+  - expanded
+  - generated
+  audio_format:
+    type: WAV
+    channels: 1
+    sample_rate: 16000
+    bit_depth: 16
+realtime_config:
+  min_confidence: 0.65
+  detection_interval_ms: 500

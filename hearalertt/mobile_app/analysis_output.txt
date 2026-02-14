@@ -1,0 +1,23 @@
+Analyzing mobile_app...                                         
+
+warning • Unused import: 'dart:math' • lib/providers/sound_provider.dart:2:8 • unused_import
+   info • The private field _history could be 'final' • lib/providers/sound_provider.dart:14:20 • prefer_final_fields
+warning • The value of the field '_contacts' isn't used • lib/screens/contacts_screen.dart:10:23 • unused_field
+   info • Use 'const' with the constructor to improve performance • lib/screens/history_screen.dart:38:17 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/screens/history_screen.dart:39:26 • prefer_const_constructors
+   info • Use 'const' literals as arguments to constructors of '@immutable' classes • lib/screens/history_screen.dart:41:31 • prefer_const_literals_to_create_immutables
+   info • Use 'const' with the constructor to improve performance • lib/screens/history_screen.dart:42:23 • prefer_const_constructors
+  error • The function can't be unconditionally invoked because it can be 'null' • lib/screens/home_screen.dart:30:25 • unchecked_use_of_nullable_value
+  error • This expression has a type of 'void' so its value can't be used • lib/screens/home_screen.dart:30:25 • use_of_void_result
+  error • The argument type 'dynamic Function(dynamic)' can't be assigned to the parameter type 'AnimationController'.  • lib/screens/home_screen.dart:34:38 • argument_type_not_assignable
+warning • The left operand can't be null, so the right operand is never executed • lib/services/alert_service.dart:13:57 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/services/alert_service.dart:16:59 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/services/alert_service.dart:34:57 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/services/alert_service.dart:37:59 • dead_null_aware_expression
+warning • The left operand can't be null, so the right operand is never executed • lib/services/alert_service.dart:53:57 • dead_null_aware_expression
+warning • Unused import: 'dart:io' • lib/services/audio_classifier_service.dart:3:8 • unused_import
+warning • The value of the field '_sampleRate' isn't used • lib/services/audio_classifier_service.dart:15:20 • unused_field
+   info • Uses 'await' on an instance of 'Stream<Uint8List>', which is not a subtype of 'Future' • lib/services/audio_classifier_service.dart:71:34 • await_only_futures
+   info • Use 'const' with the constructor to improve performance • lib/theme/app_theme.dart:17:18 • prefer_const_constructors
+   info • 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre • lib/theme/app_theme.dart:22:7 • deprecated_member_use
+

@@ -1,0 +1,4 @@
+tflite-model-maker
+librosa
+numpy
+tensorflow

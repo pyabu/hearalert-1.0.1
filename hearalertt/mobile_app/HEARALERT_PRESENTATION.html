@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HearAlert - Presentation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Calibri:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Calibri, 'Segoe UI', sans-serif;
+            background: #404040;
+            padding: 30px;
+        }
+
+        /* FACET THEME - Professional PowerPoint Style */
+        .slide {
+            width: 960px;
+            height: 540px;
+            margin: 0 auto 30px auto;
+            background: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Elements */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                linear-gradient(135deg, transparent 85%, rgba(79, 129, 189, 0.1) 85%),
+                linear-gradient(225deg, transparent 90%, rgba(79, 129, 189, 0.05) 90%);
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #4f81bd, #1f497d);
+        }
+
+        /* Title Slide */
+        .title-slide {
+            background: linear-gradient(135deg, #1f497d 0%, #4f81bd 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .title-slide::before {
+            background:
+                radial-gradient(ellipse at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+        }
+
+        .title-slide::after {
+            background: rgba(255, 255, 255, 0.3);
+            height: 4px;
+        }
+
+        .title-slide h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .title-slide .subtitle {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+        }
+
+        .title-slide .divider {
+            width: 120px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 30px 0;
+        }
+
+        .title-slide .author {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+        }
+
+        .title-slide .author strong {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .title-slide .date {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 25px;
+        }
+
+        /* Content Slides */
+        .content-slide {
+            padding: 50px 60px;
+        }
+
+        .slide-header {
+            margin-bottom: 35px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #4f81bd;
+        }
+
+        .slide-header h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #1f497d;
+        }
+
+        .content {
+            display: flex;
+            gap: 40px;
+        }
+
+        .content-full {
+            width: 100%;
+        }
+
+        .content-left,
+        .content-right {
+            flex: 1;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4f81bd;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            font-size: 15px;
+            color: #444;
+            padding: 6px 0 6px 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: #4f81bd;
+            font-size: 10px;
+            top: 10px;
+        }
+
+        li strong {
+            color: #1f497d;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f0f8 0%, #dce6f2 100%);
+            border-left: 5px solid #4f81bd;
+            padding: 18px 25px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: #1f497d;
+            font-size: 17px;
+        }
+
+        .card {
+            background: #f8fafc;
+            border: 1px solid #dce6f2;
+            border-radius: 8px;
+            padding: 20px;
+            border-top: 4px solid #4f81bd;
+        }
+
+        .card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f497d;
+            margin-bottom: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #dce6f2;
+        }
+
+        th {
+            background: linear-gradient(180deg, #4f81bd, #3a6a9e);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f5f8fb;
+        }
+
+        .slide-num {
+            position: absolute;
+            bottom: 18px;
+            right: 25px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .status-complete {
+            color: #2e7d32;
+        }
+
+        .status-progress {
+            color: #1565c0;
+        }
+
+        .status-planned {
+            color: #757575;
+        }
+
+        /* Thank You Slide */
+        .thankyou-slide {
+            background: linear-gradient(135deg, #1f497d 0%, #4f81bd 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .thankyou-slide h1 {
+            font-size: 56px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .thankyou-slide p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 24px;
+        }
+
+        .thankyou-slide .author {
+            margin-top: 50px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Slide 1: Title -->
+    <div class="slide title-slide">
+        <h1>HearAlert: AI-Powered Real-Time Sound<br>Recognition and Multi-Modal Alert System</h1>
+        <p class="subtitle">For Deaf and Hard-of-Hearing Individuals</p>
+        <div class="divider"></div>
+        <div class="author">
+            <strong>S. Abusaleem (24MSCSCPY0037)</strong>
+            M.Sc. Computer Science<br>
+            Department of Computer Science<br>
+            Pondicherry University
+        </div>
+        <p class="date">22 January 2026</p>
+        <span class="slide-num">1</span>
+    </div>
+
+    <!-- Slide 2: Problem Statement -->
+    <div class="slide content-slide">
+        <div class="slide-header">
+            <h2>Problem Statement</h2>
+        </div>
+        <div class="highlight-box">
+            <p><strong>430+ million</strong> people worldwide have disabling hearing loss — WHO</p>
+        </div>
+        <ul style="margin-top: 25px;">
+            <li><strong>Safety Risks:</strong> Unable to hear fire alarms, vehicle horns, emergency sirens</li>
+            <li><strong>Communication Barriers:</strong> Missing doorbells, phone calls, human interactions</li>
+            <li><strong>Childcare Challenges:</strong> Cannot detect baby crying or infant distress signals</li>
+            <li><strong>Limited Solutions:</strong> Traditional hearing aids don't cover all acoustic environments</li>
+        </ul>
+        <div class="highlight-box" style="margin-top: 25px;">
+            <p><strong>Solution:</strong> AI-powered mobile application with multi-sensory alerts</p>
+        </div>
+        <span class="slide-num">2</span>
+    </div>
+
+    <!-- Slide 3: Solution -->
+    <div class="slide content-slide">
+        <div class="slide-header">
+            <h2>HearAlert Solution</h2>
+        </div>
+        <p>A mobile application that converts environmental sounds into multi-modal alerts</p>
+        <div class="content" style="margin-top: 25px;">
+            <div class="card content-left">
+                <h4>🎤 Sound Detection</h4>
+                <ul>
+                    <li>Real-time audio capture at 16kHz</li>
+                    <li>TensorFlow Lite + YAMNet model</li>
+                    <li>500+ sound categories</li>
+                    <li>Less than 50ms inference latency</li>
+                </ul>
+            </div>
+            <div class="card content-right">
+                <h4>📱 Multi-Modal Alerts</h4>
+                <ul>
+                    <li><strong>Haptic:</strong> Category-specific vibrations</li>
+                    <li><strong>Visual:</strong> Flashlight strobe patterns</li>
+                    <li><strong>Audio:</strong> Text-to-speech announcements</li>
+                    <li><strong>Screen:</strong> Full-screen visual alerts</li>
+                </ul>
+            </div>
+        </div>
+        <span class="slide-num">3</span>
+    </div>
+
+    <!-- Slide 4: Technology Stack -->
+    <div class="slide content-slide">
+        <div class="slide-header">
+            <h2>Technology Stack</h2>
+        </div>
+        <table>
+            <tr>
+                <th>Component</th>
+                <th>Technology</th>
+            </tr>
+            <tr>
+                <td>Framework</td>
+                <td>Flutter 3.24+ (Cross-platform)</td>
+            </tr>
+            <tr>
+                <td>Language</td>
+                <td>Dart 3.5.3+</td>
+            </tr>
+            <tr>
+                <td>ML Runtime</td>
+                <td>TensorFlow Lite</td>
+            </tr>
+            <tr>
+                <td>Audio Model</td>
+                <td>YAMNet (521 classes, AudioSet trained)</td>
+            </tr>
+            <tr>
+                <td>Audio Capture</td>
+                <td>mic_stream package (16kHz sampling)</td>
+            </tr>
+            <tr>
+                <td>State Management</td>
+                <td>Provider Pattern</td>
+            </tr>
+            <tr>
+                <td>Target Platforms</td>
+                <td>Android 5.0+, iOS 12.0+</td>
+            </tr>
+        </table>
+        <span class="slide-num">4</span>
+    </div>
+
+    <!-- Slide 5: Key Features -->
+    <div class="slide content-slide">
+        <div class="slide-header">
+            <h2>Key Features</h2>
+        </div>
+        <div class="content">
+            <div class="content-left">
+                <h3>🔊 Priority Sound Detection</h3>
+                <ul>
+                    <li>Fire alarm / Smoke detector</li>
+                    <li>Vehicle horn / Sirens</li>
+                    <li>Door knock / Doorbell</li>
+                    <li>Baby cry / Infant distress</li>
+                    <li>Glass breaking / Danger sounds</li>
+                </ul>
+            </div>
+            <div class="content-right">
+                <h3>📳 Smart Vibration Patterns</h3>
+                <ul>
+                    <li><strong>Fire Alarm:</strong> SOS pattern (... --- ...)</li>
+                    <li><strong>Vehicle Horn:</strong> Long warning pulses</li>
+                    <li><strong>Door Knock:</strong> Double tap pattern</li>
+                    <li><strong>Baby Cry:</strong> Gentle pulse</li>
+                    <li><strong>Glass Break:</strong> Sharp urgent jitter</li>
+                </ul>
+            </div>
+        </div>
+        <span class="slide-num">5</span>
+    </div>
+
+    <!-- Slide 6: Advanced Features -->
+    <div class="slide content-slide">
+        <div class="slide-header">
+            <h2>Advanced Features</h2>
+        </div>
+        <div class="content">
+            <div class="card content-left">
+                <h4>👶 Baby Cry Classifier</h4>
+                <ul>
+                    <li><strong>Hungry:</strong> Try feeding</li>
+                    <li><strong>Burping:</strong> Pat back gently</li>
+                    <li><strong>Pain:</strong> Tummy massage</li>
+                    <li><strong>Discomfort:</strong> Check diaper</li>
+                    <li><strong>Tired:</strong> Calm environment</li>
+                </ul>
+            </div>
+            <div class="card content-right">
+                <h4>🏠 Scenario Profiles</h4>
+                <ul>
+                    <li><strong>Home:</strong> Doorbell, baby, appliances</li>
+                    <li><strong>Street:</strong> Horns, sirens, traffic</li>
+                    <li><strong>School:</strong> Bells, announcements</li>
+                </ul>
+                <h4 style="margin-top: 18px;">🆘 Emergency SOS</h4>
+                <ul>
+                    <li>One-tap emergency trigger</li>
+                    <li>Contact alerts via SMS</li>
+                </ul>
+            </div>
+        </div>
+        <span class="slide-num">6</span>
+    </div>
+
+    <!-- Slide 7: Plan of Work -->
+    <div class="slide content-slide">
+        <div class="slide-header">
+            <h2>Plan of Work</h2>
+        </div>
+        <table>
+            <tr>
+                <th>Phase</th>
+                <th>Description</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Phase 1</td>
+                <td>Research & Planning</td>
+                <td class="status-complete">✓ Complete</td>
+            </tr>
+            <tr>
+                <td>Phase 2</td>
+                <td>Core Development (Audio, ML)</td>
+                <td class="status-planned">○ Planned</td>
+            </tr>
+            <tr>
+                <td>Phase 3</td>
+                <td>Alert System (Vibration, Flash, TTS)</td>
+                <td class="status-planned">○ Planned</td>
+            </tr>
+            <tr>
+                <td>Phase 4</td>
+                <td>UI/UX Development</td>
+                <td class="status-planned">○ Planned</td>
+            </tr>
+            <tr>
+                <td>Phase 5</td>
+                <td>Advanced Features</td>
+                <td class="status-planned">○ Planned</td>
+            </tr>
+            <tr>
+                <td>Phase 6</td>
+                <td>Testing & Deployment</td>
+                <td class="status-planned">○ Planned</td>
+            </tr>
+        </table>
+        <span class="slide-num">7</span>
+    </div>
+
+    <!-- Slide 8: System Requirements -->
+    <div class="slide content-slide">
+        <div class="slide-header">
+            <h2>System Requirements</h2>
+        </div>
+        <div class="content">
+            <div class="content-left">
+                <h3>📱 Target Devices</h3>
+                <table style="font-size: 13px;">
+                    <tr>
+                        <th>Platform</th>
+                        <th>Requirement</th>
+                    </tr>
+                    <tr>
+                        <td>Android</td>
+                        <td>5.0+ (API 21)</td>
+                    </tr>
+                    <tr>
+                        <td>iOS</td>
+                        <td>12.0+</td>
+                    </tr>
+                    <tr>
+                        <td>RAM</td>
+                        <td>2 GB minimum</td>
+                    </tr>
+                    <tr>
+                        <td>Storage</td>
+                        <td>100 MB</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content-right">
+                <h3>🔧 Hardware Features</h3>
+                <table style="font-size: 13px;">
+                    <tr>
+                        <th>Feature</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>Microphone</td>
+                        <td>Required</td>
+                    </tr>
+                    <tr>
+                        <td>Vibration Motor</td>
+                        <td>Required</td>
+                    </tr>
+                    <tr>
+                        <td>Camera Flash</td>
+                        <td>Recommended</td>
+                    </tr>
+                    <tr>
+                        <td>Internet</td>
+                        <td>Not Required</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <span class="slide-num">8</span>
+    </div>
+
+    <!-- Slide 9: Thank You -->
+    <div class="slide thankyou-slide">
+        <h1>Thank You</h1>
+        <p>Questions?</p>
+        <div class="author">
+            <strong style="font-size: 20px; color: #fff;">S. Abusaleem (24MSCSCPY0037)</strong><br>
+            M.Sc. Computer Science<br>
+            Department of Computer Science, Pondicherry University
+        </div>
+        <span class="slide-num" style="color: rgba(255,255,255,0.5);">9</span>
+    </div>
+
+</body>
+
+</html>

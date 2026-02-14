@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HearAlert - Zeroth Review Document</title>
+    <style>
+        @media print {
+            @page {
+                margin: 20mm 15mm;
+                size: A4;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                padding: 0;
+                background: #fff;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+
+            .page-container {
+                border: none;
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            p,
+            li,
+            td,
+            th {
+                orphans: 3;
+                widows: 3;
+            }
+
+            h1,
+            h2,
+            h3 {
+                page-break-after: avoid;
+            }
+
+            table {
+                page-break-inside: avoid;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: none;
+            -webkit-hyphens: none;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            color: #000;
+            background: #e8e8e8;
+            padding: 20px;
+        }
+
+        /* Front Page */
+        .front-page {
+            max-width: 210mm;
+            min-height: 280mm;
+            margin: 0 auto 30px auto;
+            background: #fff;
+            padding: 40px 50px;
+            border: 3px double #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .front-page::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #000;
+            pointer-events: none;
+        }
+
+        .university {
+            font-size: 22pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .department {
+            font-size: 16pt;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .project-title-box {
+            border: 2px solid #000;
+            padding: 25px 30px;
+            margin: 50px 20px;
+            font-size: 16pt;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        .doc-type {
+            font-size: 18pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 2px solid #000;
+            padding: 12px 50px;
+        }
+
+        .submitted {
+            margin: 40px 0;
+            line-height: 2.2;
+            font-size: 14pt;
+        }
+
+        .submitted .name {
+            font-size: 20pt;
+            font-weight: bold;
+        }
+
+        .date {
+            font-size: 14pt;
+            font-weight: bold;
+        }
+
+        /* Main Document */
+        .page-container {
+            max-width: 210mm;
+            margin: 0 auto 30px auto;
+            background: #fff;
+            padding: 40px 50px;
+            border: 3px double #000;
+            position: relative;
+        }
+
+        .page-container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #000;
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 14pt;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: underline;
+            margin: 20px 0 12px 0;
+        }
+
+        h2 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 18px 0 10px 0;
+            text-decoration: underline;
+        }
+
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 20px 0 12px 0;
+        }
+
+        p {
+            text-align: justify;
+            text-indent: 40px;
+            margin-bottom: 10px;
+        }
+
+        p.no-indent {
+            text-indent: 0;
+        }
+
+        p.center {
+            text-align: center;
+        }
+
+        .title-box {
+            text-align: center;
+            font-weight: bold;
+            font-size: 13pt;
+            padding: 15px 20px;
+            border: 1px solid #000;
+            margin: 20px 0 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 10pt;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #e5e5e5;
+            font-weight: bold;
+        }
+
+        ul,
+        ol {
+            margin: 8px 0 12px 50px;
+        }
+
+        li {
+            margin-bottom: 5px;
+            text-align: justify;
+            padding-left: 5px;
+        }
+
+        li strong {
+            color: #000;
+        }
+
+        .keywords {
+            margin: 25px 0;
+            padding: 15px 20px;
+            border: 1px solid #000;
+            background: #fafafa;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #000;
+            text-align: center;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== MAIN DOCUMENT ==================== -->
+    <div class="page-container">
+
+        <!-- 1. TITLE -->
+        <h1>1. Title</h1>
+        <div class="title-box">
+            "HearAlert: AI-Powered Real-Time Sound Recognition and Multi-Modal Alert System for Deaf and Hard-of-Hearing
+            Individuals"
+        </div>
+
+        <!-- 2. ABSTRACT -->
+        <h1>2. Abstract</h1>
+
+        <p>
+            Hearing impairment significantly impacts an individual's ability to perceive environmental sounds critical
+            for safety, communication, and daily living. According to the World Health Organization, over 430 million
+            people worldwide require rehabilitation to address their hearing loss. Traditional assistive devices like
+            hearing aids provide limited functionality and fail to address the diverse acoustic environments deaf
+            individuals encounter.
+        </p>
+
+        <p>
+            This project presents <strong>HearAlert</strong>, an innovative mobile application leveraging
+            <strong>Artificial Intelligence and Machine Learning</strong> to provide real-time environmental sound
+            recognition and intelligent alerting specifically designed for deaf and hard-of-hearing users.
+        </p>
+
+        <p>
+            The system employs <strong>TensorFlow Lite's YAMNet model</strong>, a deep neural network trained on the
+            AudioSet dataset containing over 2 million audio clips. This model is capable of classifying more than
+            <strong>500 distinct sound categories</strong> including:
+        </p>
+
+        <ul>
+            <li><strong>Emergency Sounds:</strong> Fire alarms, sirens, smoke detectors, car alarms</li>
+            <li><strong>Human Interactions:</strong> Doorbell, door knocking, telephone ringing, speech</li>
+            <li><strong>Infant Sounds:</strong> Baby crying, infant distress signals</li>
+            <li><strong>Animal Sounds:</strong> Dog barking, cat meowing, bird calls</li>
+            <li><strong>Potential Dangers:</strong> Glass breaking, vehicle horns, gunshots, explosions</li>
+        </ul>
+
+        <p>
+            The application processes audio input at a <strong>16kHz sampling rate</strong> with inference latency under
+            <strong>50 milliseconds</strong>, enabling near-instantaneous detection and response.
+        </p>
+
+        <p>
+            HearAlert implements a sophisticated <strong>multi-modal alert mechanism</strong> that delivers
+            notifications through three primary channels:
+        </p>
+
+        <ol>
+            <li><strong>Haptic Feedback:</strong> Category-specific vibration patterns designed for intuitive
+                recognition (e.g., SOS pattern for fire alarms, gentle pulses for baby cries)</li>
+            <li><strong>Visual Alerts:</strong> Flashlight strobe patterns synchronized with sound urgency levels</li>
+            <li><strong>Text-to-Speech:</strong> Voice announcements for users with partial hearing</li>
+        </ol>
+
+        <p>
+            A <strong>priority-based detection engine</strong> with 38+ prioritized sound categories ensures critical
+            sounds receive immediate attention. The specialized <strong>Baby Cry Classifier</strong> module provides
+            categorization of infant distress signals (hunger, discomfort, tiredness).
+        </p>
+
+        <div class="keywords">
+            <p class="no-indent"><strong>Keywords:</strong> Deaf Accessibility, Sound Recognition, Machine Learning,
+                TensorFlow Lite, YAMNet, Flutter, Haptic Feedback, Mobile Application, Assistive Technology</p>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- 3. PLAN OF WORK -->
+        <h1>3. Plan of Work</h1>
+
+        <p>
+            The development of HearAlert is divided into six distinct phases, each with specific objectives, tasks, and
+            deliverables.
+        </p>
+
+        <h2>3.1 Phase 1: Research & Planning</h2>
+        <table>
+            <tr>
+                <th width="30%">Task</th>
+                <th width="70%">Description</th>
+            </tr>
+            <tr>
+                <td>Literature Survey</td>
+                <td>Study existing accessibility apps and research audio ML models</td>
+            </tr>
+            <tr>
+                <td>Requirement Analysis</td>
+                <td>Gather functional and non-functional requirements</td>
+            </tr>
+            <tr>
+                <td>Tech Stack Selection</td>
+                <td>Compare frameworks and select ML runtime</td>
+            </tr>
+            <tr>
+                <td>System Design</td>
+                <td>Architecture design, database design, and UI wireframes</td>
+            </tr>
+        </table>
+
+        <p class="no-indent"><strong>Key Activities:</strong></p>
+        <ul>
+            <li>Study existing apps: Sound Alert, Visualfy, Braci for feature comparison</li>
+            <li>Research YAMNet, VGGish, and AudioSet for audio classification</li>
+            <li>Survey deaf user needs through accessibility forums and WHO guidelines</li>
+            <li>Compare Flutter vs React Native vs Native development approaches</li>
+            <li>Design layered architecture with Provider state management pattern</li>
+        </ul>
+
+        <h2>3.2 Phase 2: Core Development</h2>
+        <table>
+            <tr>
+                <th width="30%">Task</th>
+                <th width="70%">Description</th>
+            </tr>
+            <tr>
+                <td>Project Setup</td>
+                <td>Flutter project initialization and platform configuration</td>
+            </tr>
+            <tr>
+                <td>Audio Capture</td>
+                <td>Microphone stream implementation at 16kHz sampling rate</td>
+            </tr>
+            <tr>
+                <td>ML Integration</td>
+                <td>TensorFlow Lite and YAMNet model integration</td>
+            </tr>
+            <tr>
+                <td>Priority Database</td>
+                <td>Create database of 38+ prioritized sounds with confidence boosting</td>
+            </tr>
+        </table>
+
+        <p class="no-indent"><strong>Key Activities:</strong></p>
+        <ul>
+            <li>Initialize Flutter project with Android, iOS, and Linux platform support</li>
+            <li>Configure microphone permissions and runtime permission handling</li>
+            <li>Implement real-time audio streaming using mic_stream package at 16kHz</li>
+            <li>Integrate TensorFlow Lite runtime with tflite_flutter plugin</li>
+            <li>Load and configure YAMNet model for 521-class audio classification</li>
+            <li>Implement audio preprocessing: normalization, buffering, and windowing</li>
+            <li>Create priority sound database with confidence boosting algorithms</li>
+        </ul>
+
+        <h2>3.3 Phase 3: Alert System</h2>
+        <table>
+            <tr>
+                <th width="30%">Task</th>
+                <th width="70%">Description</th>
+            </tr>
+            <tr>
+                <td>Vibration Patterns</td>
+                <td>Design category-specific patterns with millisecond specifications</td>
+            </tr>
+            <tr>
+                <td>Flashlight Alerts</td>
+                <td>Torch API integration and strobe pattern implementation</td>
+            </tr>
+            <tr>
+                <td>TTS Integration</td>
+                <td>Text-to-speech setup and announcement templates</td>
+            </tr>
+            <tr>
+                <td>Multi-Modal Sync</td>
+                <td>Synchronized alert delivery across all modalities</td>
+            </tr>
+        </table>
+
+        <p class="no-indent"><strong>Vibration Pattern Specifications:</strong></p>
+        <ul>
+            <li><strong>Fire Alarm:</strong> SOS pattern – [100,100]×3 + [300,100]×3 + [100,100]×3 ms</li>
+            <li><strong>Vehicle Horn:</strong> Long pulses – [500, 200, 500, 200, 500] ms</li>
+            <li><strong>Door Knock:</strong> Double tap – [100, 50, 100, 300, 100, 50, 100] ms</li>
+            <li><strong>Baby Cry:</strong> Gentle pulse – [200, 100, 200, 100, 200] ms</li>
+            <li><strong>Glass Breaking:</strong> Urgent jitter – [50, 30]×10 ms</li>
+            <li><strong>Doorbell:</strong> Chime pattern – [200, 100, 200, 300] ms</li>
+        </ul>
+
+        <p class="no-indent"><strong>Flashlight Alert Patterns:</strong></p>
+        <ul>
+            <li><strong>Emergency Alerts:</strong> Rapid strobe (100ms on/off) – fire, explosion, glass breaking</li>
+            <li><strong>Warning Alerts:</strong> Medium strobe (300ms on/off) – vehicle horn, human distress</li>
+            <li><strong>Informational Alerts:</strong> Slow flash (500ms on/off) – doorbell, phone ring</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <h2>3.4 Phase 4: UI/UX Development</h2>
+        <table>
+            <tr>
+                <th width="30%">Task</th>
+                <th width="70%">Description</th>
+            </tr>
+            <tr>
+                <td>Liquid Glass Theme</td>
+                <td>Color palette, typography, and glassmorphism effects</td>
+            </tr>
+            <tr>
+                <td>Screen Implementation</td>
+                <td>Home, Live Detection, Settings, and History screens</td>
+            </tr>
+            <tr>
+                <td>Accessibility Features</td>
+                <td>High contrast mode, large text, deaf card, signal guide</td>
+            </tr>
+        </table>
+
+        <p class="no-indent"><strong>Screen Implementations:</strong></p>
+        <ul>
+            <li><strong>Home Screen:</strong> Dashboard with quick actions, detection status, recent alerts</li>
+            <li><strong>Live Detection:</strong> Real-time waveform visualization and classification results</li>
+            <li><strong>Settings Screen:</strong> Vibration intensity, theme selection, notification preferences</li>
+            <li><strong>History Screen:</strong> Timeline view of past detected sounds with filtering</li>
+            <li><strong>Signal Guide:</strong> Interactive guide for learning vibration pattern meanings</li>
+            <li><strong>Contacts Screen:</strong> Emergency contact management for SOS feature</li>
+        </ul>
+
+        <p class="no-indent"><strong>Accessibility Features:</strong></p>
+        <ul>
+            <li><strong>High Contrast Mode:</strong> Enhanced color contrast for visibility</li>
+            <li><strong>Large Text Support:</strong> Scalable typography for readability</li>
+            <li><strong>"I'm Deaf" Card:</strong> Digital communication card for interactions</li>
+            <li><strong>Screen Flash:</strong> Full-screen color flash for critical alerts</li>
+        </ul>
+
+        <h2>3.5 Phase 5: Advanced Features</h2>
+        <table>
+            <tr>
+                <th width="30%">Task</th>
+                <th width="70%">Description</th>
+            </tr>
+            <tr>
+                <td>Baby Cry Classifier</td>
+                <td>Custom ML model for infant cry categorization</td>
+            </tr>
+            <tr>
+                <td>Scenario Profiles</td>
+                <td>Home, Street, and School detection modes</td>
+            </tr>
+            <tr>
+                <td>Emergency SOS</td>
+                <td>One-tap emergency trigger with contact alerts</td>
+            </tr>
+        </table>
+
+        <p class="no-indent"><strong>Baby Cry Categories:</strong></p>
+        <ul>
+            <li><strong>Hungry:</strong> Rhythmic, repetitive cry – Try feeding the baby</li>
+            <li><strong>Needs Burping:</strong> Fussy cry – Gently pat baby's back</li>
+            <li><strong>Belly Pain:</strong> High-pitched, intense cry – Check for colic, tummy massage</li>
+            <li><strong>Discomfort:</strong> Whimpering cry – Check diaper, clothing, temperature</li>
+            <li><strong>Tired:</strong> Breathy, yawning cry – Create calm environment, try rocking</li>
+        </ul>
+
+        <p class="no-indent"><strong>Scenario Profiles:</strong></p>
+        <ul>
+            <li><strong>Home Mode:</strong> Prioritizes doorbell, baby cry, appliances, smoke alarm</li>
+            <li><strong>Street Mode:</strong> Prioritizes vehicle horns, sirens, traffic sounds</li>
+            <li><strong>School Mode:</strong> Prioritizes bells, announcements, fire alarms</li>
+        </ul>
+
+        <h2>3.6 Phase 6: Testing & Deployment</h2>
+        <table>
+            <tr>
+                <th width="30%">Task</th>
+                <th width="70%">Description</th>
+            </tr>
+            <tr>
+                <td>Unit Testing</td>
+                <td>Service, provider, and model unit tests</td>
+            </tr>
+            <tr>
+                <td>Integration Testing</td>
+                <td>End-to-end flow and platform testing</td>
+            </tr>
+            <tr>
+                <td>UAT Testing</td>
+                <td>Deaf user testing and accessibility audit</td>
+            </tr>
+            <tr>
+                <td>Bug Fixes</td>
+                <td>Critical fixes and performance optimization</td>
+            </tr>
+            <tr>
+                <td>Final Release</td>
+                <td>Play Store and App Store submission</td>
+            </tr>
+        </table>
+
+        <p class="no-indent"><strong>Testing Activities:</strong></p>
+        <ul>
+            <li>Write unit tests for AudioClassifierService, AlertService, SoundProvider</li>
+            <li>Test classification accuracy across 500+ sound categories</li>
+            <li>Verify vibration patterns on multiple Android and iOS devices</li>
+            <li>Conduct end-to-end testing of sound detection to alert pipeline</li>
+            <li>Perform accessibility audit against WCAG 2.1 guidelines</li>
+            <li>Conduct user acceptance testing with deaf community members</li>
+            <li>Optimize battery consumption and memory usage</li>
+            <li>Prepare store listings, screenshots, and promotional materials</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <!-- 4. SYSTEM REQUIREMENTS -->
+        <h1>4. System Requirements</h1>
+
+        <h2>4.1 Development Environment</h2>
+        <table>
+            <tr>
+                <th width="30%">Component</th>
+                <th width="70%">Specification</th>
+            </tr>
+            <tr>
+                <td>Operating System</td>
+                <td>Ubuntu 22.04 LTS / Windows 11 / macOS 14+</td>
+            </tr>
+            <tr>
+                <td>IDE</td>
+                <td>Android Studio 2024.1+ / Visual Studio Code 1.85+</td>
+            </tr>
+            <tr>
+                <td>Flutter SDK</td>
+                <td>Version 3.24.0 or above</td>
+            </tr>
+            <tr>
+                <td>Dart SDK</td>
+                <td>Version 3.5.3 or above</td>
+            </tr>
+            <tr>
+                <td>Android SDK</td>
+                <td>API Level 21-34 (Android 5.0 – Android 14)</td>
+            </tr>
+            <tr>
+                <td>Xcode</td>
+                <td>Version 15.0+ (Required for iOS on macOS)</td>
+            </tr>
+        </table>
+
+        <h2>4.2 Hardware Requirements (Development Machine)</h2>
+        <table>
+            <tr>
+                <th width="25%">Component</th>
+                <th width="35%">Minimum</th>
+                <th width="40%">Recommended</th>
+            </tr>
+            <tr>
+                <td>Processor</td>
+                <td>Intel Core i5 / AMD Ryzen 5</td>
+                <td>Intel Core i7 / AMD Ryzen 7 / Apple M1+</td>
+            </tr>
+            <tr>
+                <td>RAM</td>
+                <td>8 GB</td>
+                <td>16 GB or above</td>
+            </tr>
+            <tr>
+                <td>Storage</td>
+                <td>50 GB free space</td>
+                <td>100 GB SSD</td>
+            </tr>
+        </table>
+
+        <h2>4.3 Target Mobile Device Requirements</h2>
+
+        <h3>4.3.1 Android Platform</h3>
+        <table>
+            <tr>
+                <th width="25%">Specification</th>
+                <th width="35%">Minimum</th>
+                <th width="40%">Recommended</th>
+            </tr>
+            <tr>
+                <td>Android Version</td>
+                <td>Android 5.0 (API 21)</td>
+                <td>Android 10+ (API 29+)</td>
+            </tr>
+            <tr>
+                <td>Processor</td>
+                <td>ARM v7 / ARM64</td>
+                <td>ARM64 with NPU</td>
+            </tr>
+            <tr>
+                <td>RAM</td>
+                <td>2 GB</td>
+                <td>4 GB or above</td>
+            </tr>
+            <tr>
+                <td>Storage</td>
+                <td>100 MB free</td>
+                <td>200 MB free</td>
+            </tr>
+        </table>
+
+        <h3>4.3.2 iOS Platform</h3>
+        <table>
+            <tr>
+                <th width="25%">Specification</th>
+                <th width="35%">Minimum</th>
+                <th width="40%">Recommended</th>
+            </tr>
+            <tr>
+                <td>iOS Version</td>
+                <td>iOS 12.0</td>
+                <td>iOS 15.0 or above</td>
+            </tr>
+            <tr>
+                <td>Device Model</td>
+                <td>iPhone 6s or newer</td>
+                <td>iPhone 12 or newer</td>
+            </tr>
+        </table>
+
+        <h2>4.4 Essential Hardware Features</h2>
+        <table>
+            <tr>
+                <th width="25%">Feature</th>
+                <th width="20%">Status</th>
+                <th width="55%">Usage</th>
+            </tr>
+            <tr>
+                <td>Microphone</td>
+                <td><strong>Required</strong></td>
+                <td>Audio input for sound detection</td>
+            </tr>
+            <tr>
+                <td>Vibration Motor</td>
+                <td><strong>Required</strong></td>
+                <td>Haptic alert delivery</td>
+            </tr>
+            <tr>
+                <td>Camera Flash</td>
+                <td><strong>Recommended</strong></td>
+                <td>Visual strobe alerts</td>
+            </tr>
+            <tr>
+                <td>Speaker</td>
+                <td><strong>Optional</strong></td>
+                <td>Text-to-speech announcements</td>
+            </tr>
+            <tr>
+                <td>Internet</td>
+                <td><strong>Not Required</strong></td>
+                <td>Fully offline operation</td>
+            </tr>
+        </table>
+
+        <div class="footer">
+            <p><strong>Document Version:</strong> 1.0 &nbsp;|&nbsp; <strong>Date:</strong> 22 January 2026</p>
+            <p><strong>Submitted By:</strong> S. Abusaleem &nbsp;|&nbsp; <strong>Department of Computer Science,
+                    Pondicherry University</strong></p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
